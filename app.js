@@ -164,6 +164,9 @@ allStopwatches['UX'] = new Stopwatch('UX', 0, 'svg');
 allStopwatches['SEO'] = new Stopwatch('SEO', 0, 'png');
 allStopwatches['Java'] = new Stopwatch('Java', 0, 'webp');
 allStopwatches['Discrete Mathematics'] = new Stopwatch('Discrete Mathematics', 0, 'svg');
+allStopwatches['STEM'] = new Stopwatch('STEM', 0, 'png');
+allStopwatches['Firebase'] = new Stopwatch('Firebase', 0, 'svg');
+allStopwatches['Macro and 20th'] = new Stopwatch('Macro and 20th', 0, 'svg');
 
 Object.keys(localStorage).forEach(name => {
     console.log(name)
