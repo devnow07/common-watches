@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #242424;
+}
+
+h1, h2, h3, h4 {
+    font-weight: normal;
+}
+
+.main-stopwatches-container {
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    // flex-direction: column;
+}
+
+.stopwatch {
+    height: 176px;
+    width: 360px;
+    box-shadow: 2px 2px 5px 0px #000;
+    border-radius: 15px;
+    border: 3px solid #00000000;
+
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    padding: 20px;    
+    align-items: center;
+    justify-items: center;
+
+    &.active {
+        border-color: aquamarine;
+        .circle {
+            opacity: 1;
+        }
+    }
+
+    &.virgin {
+        img {
+            filter: grayscale(1) brightness(50%);
+        }
+        .no-img {
+            color: #686868;
+        }
+    }
+
+    img {
+        width: 100px;
+    }
+
+    .no-img {
+        height: 100%;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        color: white;
+
+        h2 {
+            font-size: 1.5rem;
+            width: 130px;
+            grid-row: 1 / 2;
+            align-self: center;
+        }
+
+        .time {
+            display: flex;
+            align-items: baseline;
+            font-size: 2.4rem;
+            font-variant-numeric: tabular-nums;
+            grid-row: 2 / 3;
+        }
+    }
+
+    .circle {
+        position: absolute;
+        width: 20px; height: 20px;
+        background-color: aquamarine;
+        opacity: 0;
+        border-radius: 20px;
+        bottom: 20px; right: 20px;
+        animation: change-color 1s linear alternate infinite;
+
+        @keyframes change-color {
+            from {background-color: aquamarine;}
+            to {background-color: green;}
+        }
+    }
+}
