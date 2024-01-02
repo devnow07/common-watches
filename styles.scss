@@ -5,25 +5,50 @@
 }
 
 body {
-    font-family: sans-serif;
     background-color: #242424;
+    display: grid;
+    place-items: center;
 }
 
 h1, h2, h3, h4 {
     font-weight: normal;
 }
 
+/* .testing {
+    height: 20vh;
+    background-color: #393939;
+    font-family: sans-serif;
+
+    color:aquamarine;
+    font-size: 2rem;
+    display: grid;
+    place-items: center;
+} */
+
 .main-stopwatches-container {
     height: 100vh;
-    width: 100%;
+    width: 92%;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-evenly;
     // flex-direction: column;
+    // background-color: red;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+
+    align-content: center;
+    row-gap: 50px;
+    // justify-content: center;
 }
 
 .stopwatch {
+    user-select: none;
+    font-family: sans-serif;
+
     height: 176px;
     width: 360px;
     box-shadow: 2px 2px 5px 0px #000;
@@ -39,6 +64,13 @@ h1, h2, h3, h4 {
 
     &.active {
         border-color: aquamarine;
+        animation: change-colorx 1s linear alternate infinite;        
+
+        @keyframes change-colorx {
+            from {border-color: rgb(127, 255, 212);}
+            to {border-color: rgb(71, 219, 111);}
+        }
+
         .circle {
             opacity: 1;
         }
@@ -55,6 +87,7 @@ h1, h2, h3, h4 {
 
     img {
         width: 100px;
+        pointer-events: none;
     }
 
     .no-img {
@@ -89,8 +122,8 @@ h1, h2, h3, h4 {
         animation: change-color 1s linear alternate infinite;
 
         @keyframes change-color {
-            from {background-color: aquamarine;}
-            to {background-color: green;}
+            from {background-color: rgb(127, 255, 212);}
+            to {background-color: rgb(71, 219, 111);}
         }
     }
 }
