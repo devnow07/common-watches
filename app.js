@@ -21,9 +21,10 @@ function pad(n) {
 // console.log(localStorage)
 // localStorage.clear();
 
+const _ = undefined;
 
 class Stopwatch {
-    constructor(name, initialMs, extension) {
+    constructor(name, initialMs, extension, nonOdyssey=false, general=false) {
         this.name = name;
         this.initialMs = initialMs;
         this.extension = extension;
@@ -38,7 +39,7 @@ class Stopwatch {
         this.mainEl.innerHTML = `
             <img src="assets/${name}.${extension}">
             <div class="no-img">
-                <h2>${name}</h2>
+                <h2>${general ? '<span>*</span>' : ''}${name}</h2>
                 <p class="time"></p>
             </div>
             <div class="circle"></div>
@@ -51,6 +52,13 @@ class Stopwatch {
         }
 
         mainContainer.append(this.mainEl);
+
+        if (nonOdyssey) {
+            this.mainEl.classList.add('non-odyssey');
+        }
+        if (general) {
+            this.mainEl.classList.add('general');
+        }
 
         // PC Config
         /* this.mouseDown = false;
@@ -158,15 +166,19 @@ class Stopwatch {
 allStopwatches['JavaScript'] = new Stopwatch('JavaScript', 0, 'svg');
 allStopwatches['HTML & CSS'] = new Stopwatch('HTML & CSS', 0, 'svg');
 allStopwatches['Marketing'] = new Stopwatch('Marketing', 0, 'svg');
-allStopwatches['Decoded'] = new Stopwatch('Decoded', 0, 'svg');
+allStopwatches['Decoded'] = new Stopwatch('Decoded', 0, 'svg', true);
 allStopwatches['UI'] = new Stopwatch('UI', 0, 'svg');
 allStopwatches['UX'] = new Stopwatch('UX', 0, 'svg');
 allStopwatches['SEO'] = new Stopwatch('SEO', 0, 'png');
 allStopwatches['Java'] = new Stopwatch('Java', 0, 'webp');
 allStopwatches['Discrete Mathematics'] = new Stopwatch('Discrete Mathematics', 0, 'svg');
-allStopwatches['STEM'] = new Stopwatch('STEM', 0, 'png');
+allStopwatches['STEM'] = new Stopwatch('STEM', 0, 'png', _, true);
 allStopwatches['Firebase'] = new Stopwatch('Firebase', 0, 'svg');
 allStopwatches['Macro and 20th'] = new Stopwatch('Macro and 20th', 0, 'svg');
+allStopwatches['Digital m. and planning'] = new Stopwatch('Digital m. and planning', 0, 'svg', true);
+allStopwatches['Free reading'] = new Stopwatch('Free reading', 0, 'svg', true);
+allStopwatches['General business'] = new Stopwatch('General business', 0, 'svg', _, true);
+allStopwatches['Graphics and editing'] = new Stopwatch('Graphics and editing', 0, 'svg', _, true);
 
 Object.keys(localStorage).forEach(name => {
     console.log(name)
