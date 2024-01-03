@@ -25,14 +25,14 @@ h1, h2, h3, h4 {
     place-items: center;
 } */
 .main-stopwatches-container {
-  height: 100vh;
+  margin-top: 5vh;
   width: 92%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: center;
   justify-items: center;
   align-content: center;
-  row-gap: 50px;
+  row-gap: 20px;
 }
 
 .stopwatch {
@@ -40,7 +40,7 @@ h1, h2, h3, h4 {
      -moz-user-select: none;
           user-select: none;
   font-family: sans-serif;
-  height: 156px;
+  height: 146px;
   width: 280px;
   box-shadow: 2px 2px 5px 0px #000;
   border-radius: 15px;

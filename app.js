@@ -179,6 +179,7 @@ allStopwatches['Digital m. and planning'] = new Stopwatch('Digital m. and planni
 allStopwatches['Free reading'] = new Stopwatch('Free reading', 0, 'svg', true);
 allStopwatches['General business'] = new Stopwatch('General business', 0, 'svg', _, true);
 allStopwatches['Graphics and editing'] = new Stopwatch('Graphics and editing', 0, 'svg', _, true);
+allStopwatches['Omega-Psi'] = new Stopwatch('Omega-Psi', 0, 'webp', _, true);
 
 Object.keys(localStorage).forEach(name => {
     console.log(name)
