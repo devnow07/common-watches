@@ -1,17 +1,24 @@
+@font-face {
+    font-family: manrope;
+    src: url(./assets/manrope.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: manrope;
 }
 
 body {
     background-color: #242424;
+    color: black;
     display: grid;
     place-items: center;
 }
 
 h1, h2, h3, h4 {
-    font-weight: normal;
+    font-weight: 500;
 }
 
 /* .testing {
@@ -146,6 +153,80 @@ h1, h2, h3, h4 {
         @keyframes change-color {
             from {background-color: rgb(127, 255, 212);}
             to {background-color: rgb(71, 219, 111);}
+        }
+    }
+}
+
+.button-container {
+    height: 30vh;
+    display: grid;
+    place-items: center;
+    
+    button {
+        padding: 15px 50px;
+        font-size: 1rem;
+        cursor: pointer;
+        background-color: #242424;
+        color: rgb(255, 81, 81);
+        border: 0;
+        box-shadow: 2px 2px 5px 0px #000;
+        border-radius: 15px;
+    }
+}
+
+.modal {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+    backdrop-filter: blur(3px);
+    display: grid;
+    place-items: center;
+    display: none;
+    
+    .window {
+        height: 300px;
+        width: 500px;
+        box-shadow: 2px 2px 5px 0px #000;
+        border-radius: 15px;
+        background-color: rgba(16, 16, 16, 0.872);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        row-gap: 60px;
+        flex-direction: column;
+
+        p {
+            span {
+                color: rgb(255, 81, 81);
+                font-weight: bold;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            column-gap: 25px;
+
+            button {
+                // width: 120px;
+                // height: 50px;
+                padding: 12px 50px;
+                border-radius: 100px;
+                background-color: #000000a5;
+                border: 0;
+                font-size: 1.2rem;
+                color: white;
+                cursor: pointer;
+
+                &.yes {
+                    background-color: rgb(11, 169, 11);
+                }
+                &.no {
+                    background-color: rgb(255, 81, 81);
+                }
+            }
         }
     }
 }
